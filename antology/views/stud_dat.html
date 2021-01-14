@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Сведения</title>
+    <meta charset="utf-8" />
+    <style>
+        table {
+            border: 4px double #333; /* Рамка вокруг таблицы */
+            border-collapse: separate; /* Способ отображения границы */
+            width: 50%; /* Ширина таблицы */
+            border-spacing: 7px 11px; /* Расстояние между ячейками */
+        }
+        td {
+            padding: 5px; /* Поля вокруг текста */
+            border: 1px solid #a52a2a; /* Граница вокруг ячеек */
+        }
+    </style>
+</head>
+
+<body>
+<h1>{header}</h1>
+<p>{message}</p>
+    <form action="" method="post" onsubmit="setTimeout(function() { window.location.reload(); }, 1000)">
+        <br>
+        <label>Номер зачетного билета в формате yy-ggg-nnn, где y - год поступления, g - id группы, n - номер студента в группе</label><br>
+        <input type="text" name="biletnum" required pattern="[0-9]{2}-[A-Za-z]{3,}-[0-9]{3}" /><br><br>
+        <label>Группа</label><br>
+        <input type="text" name="groupe" required/><br><br>
+        <label>Курс</label><br>
+        <input type="number" name="curse" min="1" max = "5" required/><br><br>
+        <label>Факультет</label><br>
+        <input type="text" name="faculty" required/><br><br>
+        <input type="submit" value="Отправить" />
+    </form>
+<p><a href="/">Главная страничка</a></p>
+<p><a href="studentstable">Данные студентов</a></p>
+    <table>
+        <tr>
+            <th>Номер з/б</th>
+            <th>Группа</th>
+            <th>Курс</th>
+            <th>Факультет</th>
+        </tr>
+        {selectResult}
+    </table>
+
+
+</body>
+
+</html>
